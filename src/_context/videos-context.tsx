@@ -17,12 +17,6 @@ export const VideosProvider = ({ children }: VideosProviderProps) => {
   const [videos, setVideos] = useState<Video[]>([]);
 
   const fetchVideos = async () => {
-    await new Promise<void>((resolve) => {
-      setTimeout(() => {
-        resolve();
-      }, 3000);
-    });
-
     try {
       const res = await fetch("/api/videos");
       const data = await res.json();
