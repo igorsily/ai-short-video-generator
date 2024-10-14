@@ -6,14 +6,16 @@ import EmptyState from "@/app/dashboard/_components/empty-state";
 import Link from "next/link";
 import Videos from "@/app/dashboard/_components/videos";
 import { useVideos } from "@/_context/videos-context";
-import { useEffect } from "react";
+import { useCallback, useEffect } from "react";
 
 const DashboardPage = () => {
   const { videos, fetchVideos } = useVideos();
 
+  const memoizedFetchVideos = useCallback(fetchVideos, [fetchVideos]);
+
   useEffect(() => {
-    void fetchVideos();
-  }, [fetchVideos]);
+    void memoizedFetchVideos();
+  }, [memoizedFetchVideos]);
 
   return (
     <div>
