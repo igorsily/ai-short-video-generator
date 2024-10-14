@@ -7,7 +7,6 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { useState } from "react";
 import { OnUserSelectHandler } from "@/app/dashboard/create-video/page";
 
 const SelectDuration = ({
@@ -30,11 +29,7 @@ const SelectDuration = ({
     },
   ];
 
-  const [selectedOption, setSelectedOption] = useState<string>();
-
   const handleSelectOption = (selectedOption: string) => {
-    setSelectedOption(selectedOption);
-
     onUserSelect("duration", selectedOption);
   };
 

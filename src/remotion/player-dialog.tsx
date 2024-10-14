@@ -3,7 +3,6 @@
 import React, { useEffect, useState } from "react";
 import {
   Dialog,
-  DialogClose,
   DialogContent,
   DialogDescription,
   DialogHeader,
@@ -13,7 +12,6 @@ import { Player } from "@remotion/player";
 import RemotionVideo, { Video } from "@/remotion/remotion-video";
 import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
-import { X } from "lucide-react";
 
 type PlayerDialogType = {
   playVideo: boolean;
